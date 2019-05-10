@@ -1,0 +1,58 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 9a600d024fceb845da0b7291d48e1a69e4198b1f79819f290784699802e209ea
+
+name:           g56
+version:        0.1.0
+synopsis:       G56 encoding.
+category:       Codec
+author:         Galen Huntington <galen@alumni.reed.edu>
+maintainer:     Galen Huntington <galen@alumni.reed.edu>
+license:        MIT
+build-type:     Simple
+
+library
+  exposed-modules:
+      Codec.G56
+  other-modules:
+      Paths_g56
+  hs-source-dirs:
+      ./.
+  build-depends:
+      base >=4.9 && <5
+    , bytestring >=0.10 && <0.11
+    , vector >=0.12 && <0.13
+  default-language: Haskell2010
+
+executable g56
+  main-is: main.hs
+  other-modules:
+      Codec.G56
+      Paths_g56
+  hs-source-dirs:
+      ./.
+  build-depends:
+      base >=4.9 && <5
+    , bytestring >=0.10 && <0.11
+    , split >=0.2 && <0.3
+    , vector >=0.12 && <0.13
+  default-language: Haskell2010
+
+test-suite suite
+  type: exitcode-stdio-1.0
+  main-is: test.hs
+  other-modules:
+      Codec.G56
+      Paths_g56
+  hs-source-dirs:
+      ./.
+  build-depends:
+      QuickCheck >=2.12.6.1
+    , base >=4.9 && <5
+    , bytestring >=0.10 && <0.11
+    , vector >=0.12 && <0.13
+  default-language: Haskell2010
