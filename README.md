@@ -6,22 +6,23 @@ the differences that they use smaller character sets, particularly
 alphanumeric strings, and they are more experimental.  See the
 description of G86 for the general idea.
 
-These two encodings fill the gap between base-32, which is wasteful
-if case sensitivity can be used, and base-64, which requires
+These two encodings fill the gap between base 32, which is wasteful
+if case sensitivity can be used, and base 64, which requires
 non-alphanumeric ASCII characters.
 
 ### G43
 
-G43 is very similar to G86.  The bytes are divided into chunks of 2,
-which are interpreted as base-258 digits.  The integer value is then
-written as base 43.  As 43³ ⩾ 256², this allows every 2 bytes to
-be encoded as 3 characters from a 43-size set, for a 50% size increase.
+G43 is very similar to G86.  The bytes are divided into chunks of
+2, which are interpreted as base-258 digits.  The integer value is
+then written in base 43.  As 43³ ⩾ 256², this allows every 2
+bytes to be encoded as 3 characters from a 43-size set, for a 50%
+length increase.
 
 For the character set, I tentatively propose the digits, the uppercase
 `BCDFGHJKLMPQVWXYZ`, and the same lowercase excluding `l`.
 
-G43 is a simpler encoding, but it would be unusual for this gain in
-simplicity over G56 to be all that helpful, or that a character set
+G43 is a simpler encoding than G56, but it would be unusual for this
+gain in simplicity to be all that helpful, or that a character set
 of size 43, but less than 56, is needed.  For this reason, from here
 on only G56 is considered.
 
@@ -30,24 +31,24 @@ imagine it being needed over G56.
 
 ### Outline (v0.1)
 
-G56 expands chunks of five bytes to seven characters, for a 40% size
-increase.  The character set used is all digits, uppercase letters,
-and lowercase letters, in that order, with the exception of `IOU`
-of both cases.
+G56 expands chunks of five bytes to seven characters, for a 40%
+size increase.  The character set used is all ASCII digits, uppercase
+letters, and lowercase letters, in that order, with the exception of
+`IOU` of both cases.
 
 Consider a chunk _abcde_ of five bytes, thought of as numbers 0–255,
 and construct the integer
 
 12·56⁵·_a_ + 2·56⁴·_b_ + 24·56²·_c_ + 5·56·_d_ + _e_.
 
-Write this integer in base-56 (big-endian), using the above character
+Write this integer in base 56 (big-endian), using the above character
 set to represent “digits” 0–55, zero-padded on the left if needed
 to make exactly seven characters, to get the encoding into ASCII.
 
-For a final chunk of less than five bytes, pad zero bytes on the end
-to bring it up to five bytes, and then for the final encoding remove
-1, 2, 4, or 5 `0` characters from the end, according as to whether
-the number padded was 1, 2, 3, or 4.
+For a final chunk of less than five bytes, pad bytes of value zero on
+the end to bring it up to five bytes, and then for the final encoding
+remove 1, 2, 4, or 5 `0` characters from the end, according as whether
+the number of bytes padded on was 1, 2, 3, or 4.
 
 Although larger integers are used than in G43 and G86, all calculations
 can be comfortably done within 64-bit registers.  A message of _n_
