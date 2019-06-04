@@ -107,8 +107,8 @@ As in G86, a reference implementation in Haskell is included, which
 is also not streaming:
 
 ```bash
-g86 < data.bin > data.txt
-g86 -d < data.txt > data.bin
+g56 < data.bin > data.txt
+g56 -d < data.txt > data.bin
 ```
 
 Either `cabal install` or `stack install` can be used to build.
