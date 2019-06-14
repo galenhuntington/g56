@@ -68,8 +68,9 @@ Plugging into the above formula, we get the integers:
 477826981519; 291424773082; 715717764608.
 ```
 
-The result has two `0`s on the end, which we remove, to yield the
-encoding:
+We then write these in base 56.  The last number, for example, becomes
+`PBZE800`.  We assemble the three blocks, and remove the two `0`s on
+the end, to yield the final encoding:
 
 ```
 FTbpRez9R8v9x2PBZE8
