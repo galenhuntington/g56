@@ -84,7 +84,8 @@ The G56 encoding of the first 256 bits of π in binary:
 ```
 
 A 128-bit binary string will be encoded as 23 characters, which is
-competitive with UUIDs at 36 characters.
+competitive with UUIDs at 36 characters, is just a bit worse than
+base 64 at 22 characters, and improves upon base 32 at 26 characters.
 
 ### Future work and variations
 
