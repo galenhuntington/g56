@@ -50,13 +50,14 @@ the end to bring it up to five bytes, and then for the final encoding
 remove 1, 2, 4, or 5 `0` characters from the end, according as whether
 the number of bytes padded on was 1, 2, 3, or 4.
 
-Although larger integers are used than in G43 and G86, all calculations
-can be comfortably done within 64-bit registers.  A message of _n_
-bytes is encoded as _n_+⌈2&#xfeff;_n_/5⌉ characters.  As in G86,
-it preserves lexicographic order, and has the initial segment property.
+Although larger integers are used than in G43 and G86, this calculation
+fits comfortably within a 64-bit integer or a double-precision float.
 
-The encoding is reversible because each coefficient exceeds the next by
-a factor of at least 256.  We also see the total cannot exceed 56⁷.
+A message of _n_ bytes is encoded as _n_+⌈2&#xfeff;_n_/5⌉
+characters.  As in G86, it preserves lexicographic order, and has the
+initial segment property.  The encoding is reversible because each
+coefficient exceeds the next by a factor of at least 256.  We also
+see the total cannot exceed 56⁷.
 
 ### Examples
 
