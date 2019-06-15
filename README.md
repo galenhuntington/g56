@@ -63,21 +63,22 @@ see the total cannot exceed 56⁷.
 
 The input `Hello, world!` (as bytes) is length 13, so it will be
 encoded in three chunks, with the last padded with two zero bytes.
-Plugging into the above formula, we get the integers:
+Plugging into the above formula, we get the integers
 
 ```
 477826981519; 291424773082; 715717764608.
 ```
 
 We then write these in base 56.  The last number, for example, becomes
-`PBZE800`.  We assemble the three blocks, and remove the two `0`s on
+`PBZE800`.  We assemble the three blocks, and remove the two `0`s from
 the end, to yield the final encoding:
 
 ```
 FTbpRez9R8v9x2PBZE8
 ```
 
-The G56 encoding of the first 256 bits of π in binary:
+As another example, here is the G56 encoding of the first 256
+fractional bits of π:
 
 ```
 7kEndAMbwHbRgRWad1S23Eer3x0b8sfMJZ8A0x9W5NPCt
