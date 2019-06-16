@@ -84,9 +84,9 @@ fractional bits of π:
 7kEndAMbwHbRgRWad1S23Eer3x0b8sfMJZ8A0x9W5NPCt
 ```
 
-A 128-bit binary string will be encoded as 23 characters, which is
-competitive with UUIDs at 36 characters, is just a bit worse than
-base 64 at 22 characters, and improves upon base 32 at 26 characters.
+A 128-bit binary string will be encoded as 23 characters, as compared
+with UUIDs at 36 characters, base 64 at 22 characters, and base 32
+at 26 characters.
 
 ### Future work and variations
 
