@@ -1,5 +1,10 @@
 ##  G56
 
+_This encoding has been superseded by the new
+[G60](https://github.com/galenhuntington/g60), which gives better
+results at tiny additional cost.  I am leaving this repo here, however,
+as it contains insight and history into the design of these encodings._
+
 G43 and G56 are proposed encodings of binary data into ASCII.  They are
 analogous to [G86](https://github.com/galenhuntington/g86), with
 the differences that they use smaller character sets, particularly

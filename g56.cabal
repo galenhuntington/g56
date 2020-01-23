@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9a600d024fceb845da0b7291d48e1a69e4198b1f79819f290784699802e209ea
+-- hash: d4075cff3a5e4df6baacf3a82666b388e96796c9dcd41aafb7d049b5868644f0
 
 name:           g56
 version:        0.1.0
@@ -13,6 +13,7 @@ category:       Codec
 author:         Galen Huntington <galen@alumni.reed.edu>
 maintainer:     Galen Huntington <galen@alumni.reed.edu>
 license:        MIT
+license-file:   LICENSE
 build-type:     Simple
 
 library
